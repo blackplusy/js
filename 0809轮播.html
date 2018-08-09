@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf8'>
+		<title>轮播</title>
+		<style>
+			#carousel_window{
+				width:319px;
+				height:213px;
+				overflow:hidden;
+				position:relative;
+			}
+			#image_lists{
+				width:1276px;
+				height:213px;
+				position:absolute;
+				left:0px;
+			}
+			ul{
+				list-style:none;
+				width:1276px;
+				height:213px;
+				padding-left:0px;
+			}
+			ul li{
+				float:left;
+				width:319px;
+				height:213px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="carousel_window">
+			<div id="image_lists">
+				<ul>
+					<li><img src="a.jpg"/></li>
+					<li><img src="b.jpg"/></li>
+					<li><img src="c.jpg"/></li>
+					<li><img src="a.jpg"/></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			var left=0;/*定义一个变量left,值可以运算,style.left不能运算*/
+			var images=document.getElementById('image_lists');
+			var t=null;
+			/*t=setInterval(function(){
+				left=left-1;
+				if(left<-957){
+					left=0;
+				}
+				console.log(left%319);
+				if(left%319==0){
+					clearInterval(t);
+					setTimeout(function(){
+						ab()
+					},2000);
+				}
+				images.style.left=left+'px';
+			},10);*/
+			ab();
+			function ab(){
+				t=setInterval(function(){
+                                left=left-1;
+                                if(left<-957){
+                                        left=0;
+                                }
+                                console.log(left%319);
+                                if(left%319==0){
+                                        clearInterval(t);
+                                        setTimeout(function(){
+						ab()
+                                        },2000);
+                                }
+                                images.style.left=left+'px';
+                       		 },10);
+
+			}
+		</script>
+	</body>
+
+</html>
