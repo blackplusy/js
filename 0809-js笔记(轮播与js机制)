@@ -43,6 +43,12 @@ js
 			if和switch:
 				if 每个条件判断一次 
 				switch只判断一次
+			js循环：
+			for(变量初值;循环条件;变量累加){
+			}
+			i+=1可以写成i++;
+			例如: for(i=0;i<100;i+=1){
+			}
 		特效：轮播：
 			布局:做一个图片列表，横向轮播(做一个横向图片列表),纵向轮播（做一个纵向图片列表）
 			目的：只让用户看到1个国片，其它图片都隐藏:  overflow:hidden;超出部分隐藏
@@ -66,10 +72,56 @@ js
 					},2000);
 
 			4、无缝连接：加多一张第一张图.
+			5、按照标签名字来获取html元素
+				getElementsByTagName("li")
 
 
+			  按照类选择器的名字来取html元素
+				getElementsByClassName("pa")取得类pa\
+			6、
+				for(i=0;i<lis.length;i++){
+					lis[i].onclick=function(){
+						alert(i);
+					}
+				}
+				输出结果：全是3
+				js是单线程,alert阻塞线程 onclick阻塞线程
+				js一种异步的方式来解决单线程问题
+				es6 let 
+				for(let i=0;i<lis.length;i++){
+					lis[i].onclick=function(){
+						alert(i);
+					}
+				}
+				let块级作用域
+				setInterval产生定时器clearInterval(t);
+				setTimeout()一次没停过
+				第一次setTimeout 2秒
+				60s 第二次setTimeout 2秒
+				60s 第三次 setTimeout 2秒
+				第一次时间到，轮播
+				1s
+				clearTimeout(t);
+				
+			js单线程：
+				setTimeout  setInterval两个函数影响线程吗?
+				其实这两个函数影响线程
+				
+				console.log控制台输出
+				js执行过程:
+					先管自己线程，new对象可以执行
+					阻塞线程(setTimeout级别低，promise级别高)全部放在内存另外一个区域中,自己的线程执行结束，先找级别高的promise，成功或者失败有没有结果，有结果输出。这里有setTimeout级别一样。最后处理setTimeout
+，会按照setTimeout时间的长短去执行阻碍线程的内容
+				Promise 对象用于一个异步操作的最终完成（或失败）及其结果值的表示
+				setTimeout不准确 
 
+			js机制：1、单线程
+				2、通过异步执行的方式处理阻塞
+				3、主线程加alert,prompt,confirm，直接阻 塞js的执行
 
-
+				4、遇到setTimout setInterval promise onclick阻塞的内容，把它放在内存另外一个区域
+				5、先处理主线程
+				6、再处理promise
+				7、最后处理setTimeout.
 
 
