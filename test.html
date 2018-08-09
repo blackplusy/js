@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			console.log("1111111111");
+			setTimeout(function(){
+				console.log("2222222");
+			},1000);
+			var promise1=new Promise(function(resolve,reject){
+				console.log("333333333");
+				resolve("4444444444");
+			});
+			promise1.then(function(data){
+				console.log("5555555555");
+				console.log(data);
+			});
+			console.log("66666666666");
+			setTimeout(function(){
+				console.log("77777777777");
+			},0);
+			var promise2=new Promise(function(resolve,reject){
+				setTimeout(function(){
+                                	console.log("8888888888888");
+                                	resolve("999999999999");
+				},10);
+                        });
+                        promise2.then(function(data){
+                                console.log("aaaaaaaaaaaa");
+                                console.log(data);
+                        });
+
+			console.log("bbbbbbbbbbb");
+		</script>
+	</body>
+</html>
