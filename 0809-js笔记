@@ -1,0 +1,75 @@
+js
+   脚本语言，不需要编译，解释性语言
+   javascript 弱变量(变量随时定义)
+   js是一个单线程
+   两个大对象: DOM对象  BOM对象
+              文档对象(d--->document)  浏览器对象(BOM b-->browser)
+		文档--->dom树形结构
+		<html>
+			<head>
+				<meta name="keywords" content=""/>关键词(免费)百度规定3-5词
+				<meta name="description" content=""/>描述·
+		判断网站：1爱站网 2兼容性
+		网站增加点击率:1、网站优化:seo搜索上挚优化 sem
+			      2、做外链
+			      3、长尾关键词
+		
+		js弹出框:
+			alert(1);弹出消息框,有一个确定按钮,用作提示信息或调试时的信息,阻塞线程
+			confirm('你确定删除此条记录吗?')两个按钮，一个确定，一个是取消 
+			prompt('请输入数据')输入框，可以输入数据	
+		在文档上面写内容:
+			document.write(内容)	内容可以是一个字符串，也可以是一处html语句，如果是html语句，在网页上显示html效果.	
+		基本语法:
+			变量名
+			基本数据类型: Number(数字) String(字符串) Array数组 Object(对象) null(空) undefined
+（未定义的) boolean布尔
+			null空的,知道数据类型,是空值
+			undefined未定义的,不知道数据类型，无值
+			用var定义变量.
+			三元运算符: 5+3>8?3+2:3-2  
+			if(条件){
+				语句体
+			}else if(条件）{
+				语句体
+			}else{
+			}
+			switch(ch){
+			case 'a':break;
+			case 'b':break;
+			}
+			python:dict={'a':'优秀','b':'良好'}
+			dict['a']
+			if和switch:
+				if 每个条件判断一次 
+				switch只判断一次
+		特效：轮播：
+			布局:做一个图片列表，横向轮播(做一个横向图片列表),纵向轮播（做一个纵向图片列表）
+			目的：只让用户看到1个国片，其它图片都隐藏:  overflow:hidden;超出部分隐藏
+			1、js如何获取元素
+				document.getElementById通过id名取元素
+			2、js如何取得元素后控制css属性
+				var a=document.getElementById("aa")
+				a.style.left='-300px'
+			3、js动画实现的手段：利用定时间
+				1、不停止的定时器: setInterval
+				用法:setInterval(function(){
+				},毫秒数）
+				例子:setInterval(function(){
+				},1000);1秒动一次,动作写在function函数里
+				强制停止不停止的计时器:clearInterval(变量值)
+				变量值就是指定刚才启动的定时器
+				例： t=setInterval(function(){},200)
+					clearInterval(t)
+				2、只触发一次:setTimeout(function(){
+						
+					},2000);
+
+			4、无缝连接：加多一张第一张图.
+
+
+
+
+
+
+
