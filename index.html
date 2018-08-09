@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf8'>
+		<title>轮播</title>
+		<style>
+			#carousel_window{
+				width:319px;
+				height:213px;
+				overflow:hidden;
+				position:relative;
+			}
+			#image_lists{
+				width:1276px;
+				height:213px;
+				position:absolute;
+				left:0px;
+			}
+			ul{
+				list-style:none;
+				width:1276px;
+				height:213px;
+				padding-left:0px;
+			}
+			ul li{
+				float:left;
+				width:319px;
+				height:213px;
+			}
+			#carousel_window #indicator{
+				position:absolute;
+				right:50px;
+				bottom:10px;
+			}
+			#carousel_window #indicator ul{
+				list-style:none;
+				width:60px;
+				height:5px;
+			}
+			#carousel_window #indicator ul li{
+				width:10px;
+				height:10px;
+				border-radius:5px;
+				background:white;
+				margin-left:10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="carousel_window">
+			<div id="image_lists">
+				<ul>
+					<li><img src="a.jpg"/></li>
+					<li><img src="b.jpg"/></li>
+					<li><img src="c.jpg"/></li>
+					<li><img src="a.jpg"/></li>
+				</ul>
+			</div>
+			<div id="indicator">
+				<ul>
+					<li onclock="a"></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			var left=0;/*定义一个变量left,值可以运算,style.left不能运算*/
+			var images=document.getElementById('image_lists');
+		
+			/*	t=setInterval(function(){
+				left=left-1;
+				if(left<-957){
+					left=0;
+				}
+				if(left%319==0){
+					clearInterval(t);
+					setTimeout(function(){
+						ab()
+					},2000);
+				}
+				images.style.left=left+'px';
+			},10);*/
+			var t=null;/*setInterval启动的定时器*/
+			var ts=null;/*setTimeout启动的定时器*/
+			ab()
+			var s=0;
+			function ab(){
+				if(ts!=null){
+					clearTimeout(ts);
+					ts=null;
+				}
+				t=setInterval(function(){
+                                left=left-1;
+                                if(left<-957){
+                                        left=0;
+                                }
+				
+                                if(left%319==0){
+                                        clearInterval(t);
+                                        ts=setTimeout(function(){
+						ab()
+                                        },2000);
+                                }
+                                images.style.left=left+'px';
+                       		 },10);
+
+			}
+			var indicator=document.getElementById("indicator");
+			var lis=indicator.getElementsByTagName("li");
+			for(let i=0;i<lis.length;i++){
+				lis[i].onclick=function(){
+					if(ts!=null){
+						clearTimeout(ts);
+						ts=null;
+					}
+					clearInterval(t);
+					left=i*(-319);
+					images.style.left=left+'px';
+					ts=setTimeout(function(){
+						ab();
+					},4000);
+				}
+			}
+		</script>
+	</body>
+
+</html>
