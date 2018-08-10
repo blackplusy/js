@@ -1,0 +1,88 @@
+选项卡：相当于鼠标移动到不同的标签显示不同的内容
+js事件:
+	onmouseover鼠标经过
+	onmousedown鼠标按下
+	onmouseup 鼠标抬起
+	onmouseout鼠标移出
+	onclick点击
+	onkeydown键盘按下
+	onkeyup键抬起
+	onblur失去焦点
+	onfucus获得焦点
+	onblur onfocus用在文本框上居多
+全选框的功能实现:
+	按标签属性中的name来取元素,getElementsByName("lover");
+	dom树删除:removeChild()
+	数组的删除思路：names
+	[1,2,3,4]
+	当下标为0,1删除 [2,3,4]
+	下标为1,找的数3，2过了
+	删除：倒序删除
+	[1,2,3,4]
+	当下标为3,4干掉[1,2,3]
+	当下标为2,3干掉
+js Array数组:
+	定义 new Array()空数组，无内容
+	 var arr=[1,2,3,4,5,6,7]
+	增  前增 unshift可以增加多个元素 返回值是增加后的长度 
+	    后增 push 可以后增多个元素 返回值是增加后的长度
+	   中间增splice() splice(索引位置，删除元素的个数，被添加的元素),返回被删除的元素集合
+		
+	删  
+	    前删shift 删除的值在返回值里    后删pop 删除值也在返回值里
+	     中间删splice(下标，删除个数) 例arr.splice(i,1);//意义：在第i个位置删除1个数组元素
+	改 arr[0]=10//第1个元素为10  数组名[下标]
+	查 indexOf正向查找   
+	   lastIndexOf反向查找
+	  查找过程中有,只能找到第一个匹配元素， 索引值，没有，-1
+	 如果indexOf和lastIndexOf相等，表示没有这个元素或有且只有一个
+	  indexOf lastIndexOf应用场景:聊天或者论坛里面违禁词汇.
+	其它:
+	    concat两个数组的连接
+	    reverse数组反向
+	    join数组转成字符串
+	    slice产生子数组
+	通过concat和slice可以进行数组的复制
+	注意：
+		var arr=[1,2,3];
+		var arr1=arr;
+		这两个是一个数组，为什么？
+		因为数组是引用型变量.
+  String字符串:
+	方法：
+	1、由字符串转成数组: split()
+		常用在两个场景 :(1）查看字符串中的某元素的个数
+				(2)将字符串反向
+		代码见文件
+	2、截取子串:substring slice 这两个是从当前索引位置取到后面的索引位置之前一位
+		substr是从当前索引位置取后面的参数的字符个数 例 substr(2,3)从索引位置2取3个字符
+	3、在字符串中查找indexOf lastIndexOf，都是取字符在字符串中的索引位置
+	4、for来遍历 charAt()在某个索引位置上的字符
+  删除html页面上的可见元素
+	
+	removeChild()
+  添加html页面上的可见元素
+	appendChild()
+	
+  自己程序创建标签：
+	createElement()
+	以上方法可以动态控制html里面的元素
+以前操作的:
+	getElementsByTagName("li") 用下标来引用，但它不是数组，是伪数组
+	伪数组有长度，可以引用，不能用数组的方法
+bootstrap
+第1个动作:点击登陆，弹出一个层，要求输入用户名和密码
+	 输入成功，登录的位置改成用户名
+第2个动作:更新 的资料 小图可以变大图
+第3上动作：轮播，最后两张图，点击左按钮往左走，点击右按钮往右走，不需要过程,直接走到位即可
+
+参数：1、作这个页面多长时间
+      2、总结性文档:布局、代码
+
+	
+
+
+
+
+	
+	
