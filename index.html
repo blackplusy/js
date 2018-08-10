@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>纵向选项卡</title>
+		<style>
+			a{
+				text-decoration:none;
+			}
+			ul{
+				list-style:none;
+				width:68px;
+				height:121px;
+				padding-left:0px;
+				margin-top:0px;
+				margin-bottom:0px;
+				float:left;
+			}
+			#main{
+				width:274px;
+				margin:0 auto;
+				border:1px solid #999;
+				height:121px;
+			}
+			ul li{
+				width:48px;
+				text-align:center;
+				padding:3px 10px;
+				border-right:1px solid #999;
+				border-bottom:1px solid #999;
+				background:none;
+			}
+			.active{
+				background:gray;
+				border-right:none;
+			}
+			.no_right{
+				border-bottom:none;
+			}
+			#content{
+			
+				width:200px;
+				margin-top:0px;
+				/*	border:1px solid #999;*/
+				border-top:none;
+				float:left;
+			}
+			#content p{
+				display:none;
+				text-align:center;
+				padding-top:20px;
+				width:190px;
+			}
+			#content .show{
+				display:block;
+			}	
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<ul>
+				<li class="active"><a href="#">许嵩</a></li>
+				<li><a href="#">周杰伦</a></li>
+				<li><a href="#">林俊杰</a></li>
+				<li class="no_right"><a href="#">陈奕迅</a></li>
+			</ul>
+			<div id="content">
+				<p class="show">断桥残雪、千百度、幻听、想象之中</p>
+				<p>红尘客栈、牛仔很忙，给我一首歌的时间、听妈妈的话</p>
+				<p>被风吹过的夏天、江南、一千年以后</p>
+				<p>十年、K歌之王、浮夸</p>
+			</div>
+		</div>
+		<script>
+			var lis=document.getElementsByTagName("li");
+			var ps=document.getElementsByTagName("p");
+			for(let i=0;i<lis.length;i++){
+				lis[i].onmouseover=function(){
+					clear();
+					ps[i].className="show";
+					lis[i].className="active";
+					if(i==lis.length-1){
+						lis[i].className="active no_right";
+					}
+				}
+			}
+			function clear(){
+				for(let i=0;i<ps.length;i++){
+					ps[i].className='';
+					lis[i].className='';
+					if(i==lis.length-1){
+						lis[i].className="no_right";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

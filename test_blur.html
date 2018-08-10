@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>测试焦点</title>
+	</head>
+	<body id="main">
+		<input id="a" type="text" placeholder="请写入内容"/>
+		<input type="checkbox" id="all"/>全选
+		<input type="button" id="btn" value="删除"/> <br/>
+		
+		<input type="checkbox" name="lover" /><span>抽烟</span><br/>
+		<input type="checkbox" name="lover"/><span>喝酒</span><br/>
+		<input type="checkbox" name="lover"/><span>烫头</span><br/>
+		<script>
+			var aa=document.getElementById("a");
+			aa.onfocus=function(){
+				aa.style.border="2px solid red";
+			}
+			aa.onblur=function(){
+				aa.style.border="none"
+				aa.disabled="true"
+			}
+			var all=document.getElementById("all");
+			var names=document.getElementsByName("lover");
+			s=false;
+			all.onclick=function(){
+				s=!s;
+				if(s){
+					for(let i=0;i<names.length;i++){
+						names[i].checked="checked";
+					}
+				}else{
+					for(let i=0;i<names.length;i++){
+						names[i].checked='';
+					}
+				}	
+			}
+			var btn=document.getElementById("btn");
+			var spans=document.getElementsByTagName("span");
+			btn.onclick=function(){
+				s=confirm('你确认删除全部信息吗?');
+				if(s==true){
+					for(let i=names.length-1;i>=0;i--){
+						document.getElementById("main").removeChild(names[i]);
+						document.getElementById("main").removeChild(spans[i]);
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>
