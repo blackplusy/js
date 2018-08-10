@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>字符串练习</title>
+	</head>
+	<body>
+		<script>
+			str="abcdefajdklas";
+			arr=str.split("");
+			console.log(arr);
+			/*
+				算str串中a的个数是几
+				把str串以a为界转数组
+				数组长度-1
+			*/
+			arr1=str.split("a");
+			console.log(arr1.length);
+			console.log(arr1);
+			/*
+				所字符串中反向
+				字符串函数中没有反向
+				思路：转成数组，数组有反向
+				反向后再转成字符串
+			
+			*/
+			console.log(str.split("").reverse().join(""));
+			console.log('--------------');
+			str1=str.substring(2,6);
+			console.log(str1);
+			str2=str.slice(2,6);
+			console.log(str2);
+			str3=str.substr(2,6);
+			console.log(str3);
+		        for(let i=0;i<str.length;i++){
+				console.log(str.charAt(i));
+			}	
+		</script>
+	</body>
+</html>
+
