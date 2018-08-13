@@ -1,0 +1,44 @@
+js面向对象
+  1、js七个基本数据类型，针对过程
+  2、es5的面向对象，es6
+	面向对象三大特性：继承 封装 多态
+	js有继承，有封装，没有严格意义上的多态
+	(1)js如何定义面向对象
+		es5
+			function Animal(){
+			}
+			定义了一个Animal的类
+		es6
+			class Animal(){
+			}
+	(2)js如何继承
+		 es5
+			prototype关键字
+			Animal.prototype.save=function(){
+			}
+			定义了Animal的方法save
+		es6	
+			extends 
+	(3)js封装写到一个文件js里即可
+		es5:
+			定义属性直接this.age
+	(4)多态（了解),数组splice(3,1,3,4,5,56,6)
+	(5)prototype:js理解成原型链
+		原型链：js认为一切都是Object,定义一个Animal类，js会根据Animal继承情况链式一步步找它的祖先，没有默认就是Object,这样形成一个链，这个链就叫原型链.
+	(6)结合原型链认识一下H5新标签canvas
+		canvas意思: 画布
+		用法：先定义一个cancas标签,默认宽高300*150
+		      h5提供了一个图片类，Image，
+		      只能用js来控制
+		特点：1、canvas的width,height不能用css设置，css设置的width和height是在原有的宽和高上进行拉伸。
+		      2\ canvas内部画的图像不能自动删除，只能手动处理，clearRect()来清除画布上的图像
+			clearRect(擦除左上角x,擦除左上角y,擦除宽，擦除高);
+		     3\ canvas里面画的的内容接收不到click事件，靠canvas来接收
+			白鹭时代 egret ts语言 针对游戏开发的js语言 围住神经猫
+		重要的概念：
+		     1\懒加载：<img src="图片">这种叫立即加载，网页一打开，就开始加载
+			图片，如果图片没有加载完成，就是X.
+			懒加载，网页加载时看不到这个图片，什么时候加载完成了再显示，
+			Image类，new看不到 ,当图片onload即加载完成
+		     2\this的问题:this指的是当前类实例,window.setInterval()
+		
