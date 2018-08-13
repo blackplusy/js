@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>css3动画</title>
+		<style>
+			#a{
+				transform:rotate(20deg);
+			}
+			body{
+				background:linear-gradient(to top,lightblue,darkblue);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="img"  src="qiqiu1.png">
+		</div>
+		<script>
+			img=document.getElementById("img");
+			img.onclick=function(){
+				img.style.transform="rotate(30deg)";
+				img.style.transform="scale(0.5)";
+				img.style.transform="translate(100px,100px)";
+			}
+		</script>
+	</body>
+
+</html>

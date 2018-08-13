@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>js面向对象</title>
+	</head>
+
+	<body>
+		<script>
+			function Animal(){
+				this.name="动物";
+				this.color=red;
+			}
+			Animal.prototype.bark=function(){
+				console.log('叫声');
+			}
+			function Dog(){
+			}
+			Dog.prototype=Animal.prototype;
+			function HuaDog(){
+			}
+			HuaDog.prototype=Dog.prototype;
+			var dog=new Dog();
+			dog.bark();
+			
+		</script>
+	</body>
+</html>

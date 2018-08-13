@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>window测试</title>
+	</head>
+	<body>
+		打开网页的时候，还同时打开一个窗口
+		<button onclick="closewin()">关闭窗口</button>
+		<button onclick="back()">回退</button>
+		<button onclick="show()">显示浏览器版本</button>
+		<script>
+			console.log(location.href);	
+			function closewin(){
+				/*window.close()*/
+				location.href="http://www.baidu.com";
+			}
+			function back(){
+				history.back();
+			}
+			function show(){		
+				console.log(navigator.userAgent);
+			}
+		</script>
+	</body>
+</html>
