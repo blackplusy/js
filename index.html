@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>canvas测试</title>
+		<style>
+			canvas{
+				background:black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width=500 height=500></canvas>
+		<script>
+			canvas=document.getElementById("canvas");
+			context=canvas.getContext("2d");
+			/*var img=new Image();
+
+			img.src="qiqiu1.png";
+			img.onload=function(){
+			
+				context.drawImage(img,0,0);
+			}*/
+			function QiQiu(cont){
+				var image=new Image();
+				image.src="qiqiu1.png";
+				this.x=200;
+				this.y=400;
+				
+				image.onload=function(){
+					cont.drawImage(image,200,400);
+				}
+				this.width=image.width;
+				this.height=image.height;
+				this.img=image;
+				this.cont=cont;
+				this.t=null;
+			}
+			/*QiQiu.prototype.draw=function(context){
+				this.img.onload=function(){
+					context.drawImage(this.img,0,0);
+				}
+			}*/
+			QiQiu.prototype.piao=function(){
+				var _this=this;
+				this.t=setInterval(function(){
+					_this.cont.clearRect(_this.x,_this.y,_this.width,_this.height);
+					_this.y--;
+					_this.cont.drawImage(_this.img,_this.x,_this.y);
+					
+				},100);
+			}	
+			QiQiu.prototype.destroy=function(){
+				clearInterval(this.t);
+				this.cont.clearRect(this.x,this.y,this.width,this.height);
+			}
+			 var qi=new QiQiu(context);
+                        qi.piao();
+                        canvas.onclick=function(e){
+                                console.log(e.clientX);
+                                console.log(e.clientY);
+                                if(e.clientX>qi.x&&e.clientX<qi.x+qi.width&&e.clientY>qi.y&&e.clientY<qi.y+qi.height){
+                                        qi.destroy();
+                                }
+                        }
+	
+		</script>
+	</body>
+
+</html>
