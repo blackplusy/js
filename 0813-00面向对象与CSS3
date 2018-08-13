@@ -1,0 +1,91 @@
+js一些对象
+	Math数学对象
+		Math.random()产生0-1之间的随机数
+		Math.floor（）向下截取 
+		Math.ceil()向上截取
+		Math.round()四舍五入
+		Math.abs()绝对值
+		Math.pow()平方
+		
+	Date日期对象
+		new Date()取得当前时间
+		getYear()取年份，做了一个运算，与 1900作运算
+		getFullYear()取出当前年份
+		getMonth()取月份，月份的索引从0开始
+		getDay（）取星期几
+		getDate()取哪天,几日
+		getHours()取小时
+		getMinutes()取分钟
+		getSeconds()取秒
+		getTime()取毫秒
+		刷新:<meta http-equiv="refresh" content="2">
+DOM  添加元素 appendChild 移除元素 removeChild  创建元素 createElement
+     设置元素属性: 元素.属性 img.src=""   设置元素的样式 元素.style.样式名  注意样式名如果有连线，例 background-color，如果用命令: it.style.backgroundColor 把连线去掉，将连线后的首字母大写
+BOM浏览器对象
+	window
+		window.setInterval
+		window.setTimeout
+		open方法，打开一个新窗口
+		close方法，关闭一个窗口，关闭的是open打开的窗口
+
+	location地址栏 
+		href取地址栏的地址
+		location.href还可以跳转页面.
+	history 历史记录
+		history.back()回退一步，回退前一个页面，不管前一个页面是对的还是错的
+		history.forward()前进一步，前进到前一个页面，
+		history.go(）可以退几步.go(-5)退5个   go(5)前进5个 go(-1)---> back() go(1)--->forward()
+ 
+	navigator对象
+		测试浏览器,测试服务器系统
+		userAgent
+		if(navigator.userAgent.indexOf('Android')安卓手机
+		if(navigator.userAgent.indexOf('IOS')苹果手机
+		if(navigator.userAgent.indexOf('platform')平板
+H5的一些特性
+	1、canvas
+	2、video视频 audio音频
+	3、语义化标签:<div> 
+		没有实在意义，有1、有一定的意思,2、百度爬虫的爬取范围内
+		头部<header>
+		导航 <nav>
+		菜单<menu>
+		网页主体<main>
+		底部<footer>
+		侧栏 <aside>
+		网页中正文<article>
+		网页有图片展示的内容<section>
+css3
+	弹性盒子
+		一般适用移动端 
+		做移动端head必须有:<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scale=1.0">
+		弹性盒子：盒子的宽度可以根据外界的宽度而进行适当调整。
+			display:flex;定义了一个弹性盒子
+			给里面的盒子布局，flex:1表示的所有盒子平均分配.
+	css3动画:
+		transform动画:
+			translate()移动位置
+			rotate()旋转
+			scale()缩放
+			skew（）扭曲(*)
+		浏览器兼容的前缀:
+			-ms 微软
+			-moz Firefox
+			-webkit google safari
+			-o   欧鹏 Opera
+		过渡色:background-image:linear-gradient(top,red,blue);
+	圆角，过渡色，背景尺寸
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
